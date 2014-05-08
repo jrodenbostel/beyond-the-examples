@@ -5,6 +5,18 @@
     <title>HELLO</title>
 </head>
 <body>
-<p th:text="${message}"></p>
+<form id="gizmo-form" role="form" th:action="@{/save}" method="post" th:object="${gizmo}">
+    <div>
+        <label for="field1">Field 1</label>
+        <input type="text" id="field1" name="field1" th:field="${gizmo.field1}"/>
+    </div>
+    <div>
+        <label for="field2">Field 2</label>
+        <input type="text" id="field2" name="field2" th:field="${gizmo.field2}"/>
+    </div>
+    <div>
+        <button type="submit">Save</button>
+    </div>
+</form>
 </body>
 </html>

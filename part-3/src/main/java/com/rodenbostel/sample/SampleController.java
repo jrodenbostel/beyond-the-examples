@@ -9,8 +9,7 @@ public class SampleController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("message", "HELLO!");
+        model.addAttribute("gizmo", new Gizmo());
         return "hello";
     }
-
 }
