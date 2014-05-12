@@ -10,7 +10,9 @@ public class SampleController {
 
     @RequestMapping("/")
     public String index(Model model) {
-        model.addAttribute("gizmo", new Gizmo());
+        Gizmo gizmo = new Gizmo();
+        gizmo.getChildren().add(new GizmoChild());
+        model.addAttribute("gizmo", gizmo);
         return "hello";
     }
 
@@ -18,6 +20,10 @@ public class SampleController {
     public String save(Gizmo gizmo) {
         System.out.println(gizmo.getField1());
         System.out.println(gizmo.getField2());
+        for(GizmoChild child : gizmo.getChildren()) {
+            System.out.println(child.getChildField1());
+            System.out.println(child.getChildField2());
+        }
         return "hello";
     }
 }
