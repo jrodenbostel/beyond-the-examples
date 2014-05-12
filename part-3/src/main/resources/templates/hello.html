@@ -25,9 +25,6 @@
                     <label th:for="${'childField2-'+stat.index}">Field 2</label>
                     <input type="text" class="form-control quantity" name="childField2"
                            th:field="*{children[__${stat.index}__].childField2}" th:id="${'childField2-'+stat.index}"/>
-
-                    <button type="button">Add</button>
-                    <button type="button">Remove</button>
                 </div>
             </li>
         </ul>
