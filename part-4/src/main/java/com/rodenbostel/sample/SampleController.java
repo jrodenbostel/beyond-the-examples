@@ -1,4 +1,4 @@
-package main.java.com.rodenbostel.sample;
+package com.rodenbostel.sample;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

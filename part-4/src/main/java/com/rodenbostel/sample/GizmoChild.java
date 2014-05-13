@@ -1,4 +1,4 @@
-package main.java.com.rodenbostel.sample;
+package com.rodenbostel.sample;
 
 /**
  * Created by justin on 5/12/14.
