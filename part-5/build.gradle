@@ -27,6 +27,7 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-security")
     compile("org.thymeleaf:thymeleaf-spring4:2.1.2.RELEASE")
 
     testCompile("junit:junit")
