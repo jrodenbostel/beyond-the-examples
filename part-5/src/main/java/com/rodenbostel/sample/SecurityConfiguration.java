@@ -51,9 +51,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        PasswordEncoder encoder = new BCryptPasswordEncoder();
         JdbcUserDetailsManager userDetailsService = new JdbcUserDetailsManager();
         userDetailsService.setDataSource(datasource);
+        PasswordEncoder encoder = new BCryptPasswordEncoder();
 
         auth.userDetailsService(userDetailsService).passwordEncoder(encoder);
         auth.jdbcAuthentication().dataSource(datasource);
@@ -65,7 +65,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
             userDetailsService.createUser(userDetails);
         }
-
-
     }
 }
