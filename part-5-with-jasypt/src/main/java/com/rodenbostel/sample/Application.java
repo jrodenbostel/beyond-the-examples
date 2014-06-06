@@ -51,34 +51,12 @@ public class Application extends WebMvcConfigurerAdapter {
         return ds;
     }
 
-//    http://www.jasypt.org/spring31.html
-//    http://www.jasypt.org/springsecurity.html
-//    http://www.jasypt.org/encrypting-configuration.html
-//    http://sourceforge.net/projects/jasypt/files/jasypt/jasypt%201.9.2/
-//    Justins-MacBook-Pro:bin justin$ ./encrypt.sh input="password" password=testtest
-//
-//    ----ENVIRONMENT-----------------
-//
-//    Runtime: Oracle Corporation Java HotSpot(TM) 64-Bit Server VM 24.51-b03
-//
-//
-//
-//    ----ARGUMENTS-------------------
-//
-//    input: password
-//    password: testtest
-//
-//
-//
-//    ----OUTPUT----------------------
-//
-//    xpPrNtXz+SQmTYB0WQrc+2T8ZTubofox
     private String getSecurePassword() throws IOException {
         StandardPBEStringEncryptor encryptor = new StandardPBEStringEncryptor();
-        encryptor.setPassword(System.getProperty("tadirect.jasypt.key"));
+        encryptor.setPassword(System.getProperty("example.jasypt.key"));
         Properties props = new EncryptableProperties(encryptor);
         props.load(this.getClass().getClassLoader().getResourceAsStream("application.properties"));
-        return props.getProperty("datasource.password");
+        return props.getProperty("spring.datasource.password");
     }
 
     @Bean
